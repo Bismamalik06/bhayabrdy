@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisma Malik</title>
+    <style>
+        body {
+            padding: 25px;
+            background-image: url(bg.png);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        #timer {
+            font-size: 58px;
+            font-weight: 800;
+            color: white;
+            padding: 20px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            text-align: center;
+            width: 70%;
+            margin: 40px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            margin-top: 15%;
+            background-color: transparent;
+        }
+        #timer span {
+            font-size: 24px;
+            color: #666;
+        }
+        #timer.expired {
+            background-color: #ffcccc;
+            color: #ff0000;
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            font-size: xx-large;
+            font-weight: 1000;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="timer"></div>
+    <p>Measum Bhai💖🌺<br>Happy Birthday Yarr🎁</p>
+    <audio  autoplay source src="/audio.mp4" type="/audio.mp4">
+    </audio>
+    <script>
+        const endTime = new Date(Date.UTC(2024, 7, 20, 19, 0, 0)); 
+
+        const now = new Date();
+        const timeDiff = endTime - now;
+
+        if (timeDiff <= 0) {
+            document.getElementById('timer').innerHTML = 'Happy Birthday Bhai💖! You Are My Unexpected Brother🥹😅 Keep Our Bonding 🧪Always Constant 🤞🏻 You Are My Permanent Bestbrother♥️🌚 Actually👉🏻👈🏻, Basically , ❣️ technically,👩‍💻 Electronically ,🔌💡⚡ Mathematically, 📐📏➕ Normally, 💕 mentally,🧠 Emotionally🥹🤧 And Finally🥳 You Are My Brother🫀 Happy birthday yaraaaaaaa🥹💕 I hope that the universe 🌍 will give you all the good 🥹and genuine🫀 things that you deserve..🌟 I dont know why 🤔 but the bond🤞🏻 I have with you🫵🏻, I really dont 🙅‍♀️ have with anyone else🥹 ♥️🫶🏻🫀 Happy happy birthday bhayaaaa♥️🫶🏻';
+        } else {
+            const intervalId = setInterval(() => {
+                const timeLeft = endTime - new Date();
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('timer').innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(intervalId);
+                    document.getElementById('timer').innerHTML = 'Happy Birthday Bhai💖! You Are My Unexpected Brother🥹😅 Keep Our Bonding 🧪Always Constant 🤞🏻 You Are My Permanent Bestbrother♥️🌚 Actually👉🏻👈🏻, Basically , ❣️ technically,👩‍💻 Electronically ,🔌💡⚡ Mathematically, 📐📏➕ Normally, 💕 mentally,🧠 Emotionally🥹🤧 And Finally🥳 You Are My Brother🫀 Happy birthday yaraaaaaaa🥹💕 I hope that the universe 🌍 will give you all the good 🥹and genuine🫀 things that you deserve..🌟 I dont know why 🤔 but the bond🤞🏻 I have with you🫵🏻, I really dont 🙅‍♀️ have with anyone else🥹 ♥️🫶🏻🫀 Happy happy birthday bhayaaaa♥️🫶🏻';
+                    document.getElementById('timer').classList.add('expired');
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
